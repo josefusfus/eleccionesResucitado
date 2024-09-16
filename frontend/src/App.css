@@ -13,7 +13,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  flex-wrap: wrap; /* Permite que los elementos se reorganicen en pantallas pequeñas */
+  flex-wrap: nowrap; /* Mantener los elementos en una sola línea */
 }
 
 .header img.logo {
@@ -36,7 +36,7 @@ body {
 
 /* Formulario de login en pantallas grandes */
 .login-form {
-  display: flex; /* Asegurar que el formulario se muestre en pantallas grandes */
+  display: flex; /* Mostrar el formulario de login en línea */
   gap: 10px;
 }
 
@@ -93,8 +93,8 @@ body {
   display: flex;
   flex-direction: column;
   gap: 10px;
-  align-items: center; /* Centra el formulario */
-  width: 100%; /* Aseguramos que el formulario ocupe todo el ancho del menú */
+  align-items: center;
+  width: 100%;
 }
 
 .menu-content .login-form input {
@@ -206,15 +206,23 @@ button:hover {
 }
 
 /* Media Queries para pantallas pequeñas */
-@media (max-width: 768px) {
+
+/* Activar menú hamburguesa en pantallas pequeñas o cuando la ventana es más estrecha */
+@media (max-width: 1024px) {
   .login-form {
-    display: none; /* Ocultar el formulario de login en pantallas pequeñas */
+    display: none; /* Ocultar el formulario de login en pantallas más pequeñas */
   }
 
   .hamburger-menu {
-    display: block; /* Mostrar el menú hamburguesa en pantallas pequeñas */
+    display: block; /* Mostrar el menú hamburguesa en pantallas más pequeñas */
   }
 
+  .header {
+    justify-content: space-between;
+  }
+}
+
+@media (max-width: 768px) {
   .description {
     font-size: 16px;
   }
@@ -239,11 +247,6 @@ button:hover {
 @media (max-width: 480px) {
   .header h1 {
     font-size: 18px;
-  }
-
-  .login-form input,
-  .login-form button {
-    padding: 8px;
   }
 
   .description {
