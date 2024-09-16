@@ -37,7 +37,7 @@ const Header = ({ loggedIn, setLoggedIn, setRole }) => {
     return (
         <header className="header">
             <img src="/logo.png" alt="Logo" className="logo" />
-            <h1>Transparencia en las Elecciones</h1>
+            <h1>Actualidad de los Hechos de las Elecciones del Resucitado 2024</h1>
 
             {!loggedIn ? (
                 <>
