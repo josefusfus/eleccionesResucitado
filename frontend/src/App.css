@@ -77,25 +77,31 @@ body {
 
 .menu-content {
   position: absolute;
-  top: 40px;
+  top: 60px;
   right: 0;
+  width: 100%; /* Ajustamos el ancho del menú */
   background-color: white;
   padding: 20px;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
   border-radius: 5px;
   z-index: 1000;
+  display: flex;
+  justify-content: center; /* Centramos el formulario */
 }
 
 .menu-content .login-form {
   display: flex;
   flex-direction: column;
   gap: 10px;
+  align-items: center; /* Centra el formulario */
+  width: 80%; /* Limita el ancho del formulario para que no se salga */
 }
 
 .menu-content .login-form input {
   padding: 10px;
   border-radius: 5px;
   border: 1px solid #ccc;
+  width: 100%; /* Asegura que el input ocupe todo el ancho disponible */
 }
 
 .menu-content .login-form button {
