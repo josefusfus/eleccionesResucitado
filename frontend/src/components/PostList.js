@@ -6,11 +6,16 @@ const PostList = ({ role, postsUpdated, setPostsUpdated }) => {
     const [editedTitle, setEditedTitle] = useState('');
     const [editedContent, setEditedContent] = useState('');
 
+    // Detectar si estamos en producción o en desarrollo
+    const API_URL = process.env.NODE_ENV === 'production'
+        ? 'https://eleccionesresucitado.onrender.com' // URL del backend en producción
+        : 'http://localhost:5001'; // URL del backend en desarrollo
+
     useEffect(() => {
-        fetch('/api/posts')
+        fetch(`${API_URL}/api/posts`)
             .then((res) => res.json())
             .then((data) => setPosts(data));
-    }, [postsUpdated]);
+    }, [postsUpdated, API_URL]);
 
     const handleEdit = (post) => {
         setEditingPostId(post._id);
@@ -19,7 +24,7 @@ const PostList = ({ role, postsUpdated, setPostsUpdated }) => {
     };
 
     const handleSave = async (postId) => {
-        await fetch(`/api/posts/${postId}`, {
+        await fetch(`${API_URL}/api/posts/${postId}`, {
             method: 'PUT',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ title: editedTitle, content: editedContent })
@@ -29,7 +34,7 @@ const PostList = ({ role, postsUpdated, setPostsUpdated }) => {
     };
 
     const handleDelete = async (postId) => {
-        await fetch(`/api/posts/${postId}`, { method: 'DELETE' });
+        await fetch(`${API_URL}/api/posts/${postId}`, { method: 'DELETE' });
         setPostsUpdated(true);
     };
 
