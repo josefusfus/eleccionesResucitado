@@ -16,9 +16,9 @@ const getPosts = async (req, res) => {
 
 // Editar una entrada
 const updatePost = async (req, res) => {
-    const { postId } = req.params;
+    const { id } = req.params; // Cambiar postId a id
     const { title, content } = req.body;
-    const post = await Post.findById(postId);
+    const post = await Post.findById(id);
     if (!post) return res.status(404).send('Post not found');
     post.title = title;
     post.content = content;
