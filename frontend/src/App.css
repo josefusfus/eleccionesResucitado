@@ -1,0 +1,254 @@
+/* Estilos generales */
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #e6ecf0; /* Fondo similar a Twitter */
+  margin: 0;
+  padding: 0;
+}
+
+.header {
+  background-color: #1da1f2;
+  color: white;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap; /* Permite que los elementos se reorganicen en pantallas pequeñas */
+}
+
+.header img.logo {
+  height: 50px;
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 24px;
+}
+
+/* Estilo de la descripción */
+.description {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 18px;
+  color: #657786;
+  padding: 0 10px;
+}
+
+/* Formulario de login en pantallas grandes */
+.login-form {
+  display: flex; /* Asegurar que el formulario se muestre en pantallas grandes */
+  gap: 10px;
+}
+
+.login-form input {
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  margin-right: 10px;
+}
+
+.login-form button {
+  background-color: #fff;
+  border: 1px solid #1da1f2;
+  color: #1da1f2;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.login-form button:hover {
+  background-color: #1da1f2;
+  color: white;
+}
+
+/* Estilos del menú hamburguesa */
+.hamburger-menu {
+  position: relative;
+  display: none; /* Ocultar en pantallas grandes */
+}
+
+.hamburger-icon {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.menu-content {
+  position: absolute;
+  top: 40px;
+  right: 0;
+  background-color: white;
+  padding: 20px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  z-index: 1000;
+}
+
+.menu-content .login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.menu-content .login-form input {
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.menu-content .login-form button {
+  background-color: #1da1f2;
+  border: none;
+  color: white;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 5px;
+  width: 100%;
+}
+
+.menu-content .login-form button:hover {
+  background-color: #0d95e8;
+}
+
+/* Estilo del menú */
+.menu {
+  margin: 20px 0;
+  text-align: center;
+}
+
+.menu button {
+  background-color: #1da1f2;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-right: 10px;
+}
+
+.menu button:hover {
+  background-color: #0d95e8;
+}
+
+/* Contenedor scroll para entradas */
+.scroll-container {
+  height: 500px;
+  overflow-y: scroll;
+  margin: 0 auto;
+  width: 60%;
+}
+
+.post-list {
+  margin: 20px auto;
+  width: 100%;
+}
+
+.post {
+  background: #fff;
+  padding: 20px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #e1e8ed;
+  border-radius: 5px;
+}
+
+.create-post-form {
+  margin: 20px auto;
+  width: 60%;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.create-post-form input,
+.create-post-form textarea,
+.input-title,
+.input-content {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.create-post-form button {
+  background-color: #1da1f2;
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.create-post-form button:hover {
+  background-color: #0d95e8;
+}
+
+button {
+  background-color: #1da1f2;
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+
+button:hover {
+  background-color: #0d95e8;
+}
+
+/* Media Queries para pantallas pequeñas */
+@media (max-width: 768px) {
+  .login-form {
+    display: none; /* Ocultar el formulario de login en pantallas pequeñas */
+  }
+
+  .hamburger-menu {
+    display: block; /* Mostrar el menú hamburguesa en pantallas pequeñas */
+  }
+
+  .description {
+    font-size: 16px;
+  }
+
+  .scroll-container {
+    width: 90%; /* Reducir el ancho en pantallas pequeñas */
+  }
+
+  .create-post-form {
+    width: 90%;
+  }
+
+  .menu {
+    text-align: center;
+  }
+
+  .menu button {
+    margin-bottom: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .header h1 {
+    font-size: 18px;
+  }
+
+  .login-form input,
+  .login-form button {
+    padding: 8px;
+  }
+
+  .description {
+    font-size: 14px;
+  }
+
+  .scroll-container {
+    width: 95%;
+  }
+
+  .create-post-form {
+    width: 95%;
+  }
+}
