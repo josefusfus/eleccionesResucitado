@@ -29,6 +29,9 @@ const Header = ({ loggedIn, setLoggedIn, setRole }) => {
     const handleLogout = () => {
         setLoggedIn(false);
         setRole('');
+        // Limpiar los campos de usuario y contraseña al hacer logout
+        setUsername('');
+        setPassword('');
     };
 
     return (
