@@ -78,15 +78,15 @@ body {
 .menu-content {
   position: absolute;
   top: 60px;
-  right: 0;
-  width: 100%; /* Ajustamos el ancho del menú */
+  right: 5%; /* Centrar el menú en la pantalla */
+  width: 90%; /* Ajustar el menú al 90% del ancho de la pantalla */
   background-color: white;
   padding: 20px;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
   border-radius: 5px;
   z-index: 1000;
   display: flex;
-  justify-content: center; /* Centramos el formulario */
+  justify-content: center; /* Centramos el contenido del menú */
 }
 
 .menu-content .login-form {
@@ -94,14 +94,14 @@ body {
   flex-direction: column;
   gap: 10px;
   align-items: center; /* Centra el formulario */
-  width: 80%; /* Limita el ancho del formulario para que no se salga */
+  width: 100%; /* Aseguramos que el formulario ocupe todo el ancho del menú */
 }
 
 .menu-content .login-form input {
   padding: 10px;
   border-radius: 5px;
   border: 1px solid #ccc;
-  width: 100%; /* Asegura que el input ocupe todo el ancho disponible */
+  width: 100%; /* Aseguramos que los inputs ocupen todo el ancho disponible */
 }
 
 .menu-content .login-form button {
@@ -111,7 +111,7 @@ body {
   padding: 10px;
   cursor: pointer;
   border-radius: 5px;
-  width: 100%;
+  width: 100%; /* Aseguramos que el botón ocupe todo el ancho del menú */
 }
 
 .menu-content .login-form button:hover {
