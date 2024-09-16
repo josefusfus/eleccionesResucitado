@@ -26,4 +26,14 @@ const updatePost = async (req, res) => {
     res.send('Post updated');
 };
 
-module.exports = { createPost, getPosts, updatePost };
+const deletePost = async (req, res) => {
+    try {
+        const post = await Post.findByIdAndDelete(req.params.id);
+        if (!post) return res.status(404).send('Post not found');
+        res.status(200).send('Post deleted');
+    } catch (err) {
+        res.status(500).send('Server error');
+    }
+};
+
+module.exports = { createPost, getPosts, updatePost, deletePost };
