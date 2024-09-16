@@ -1,6 +1,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const dotenv = require('dotenv');
+const PORT = process.env.PORT || 5001;
 const cors = require('cors');
 const authRoutes = require('./routes/authRoutes');
 const postRoutes = require('./routes/postRoutes');
@@ -20,6 +21,6 @@ mongoose.connect(process.env.MONGO_URI)
     .then(async () => {
         console.log('Connected to MongoDB');
         await seedAdmin();
-        app.listen(5001, () => console.log(`Server running on port 5001`));
+        app.listen(PORT, () => console.log(`Server running on port : ${PORT} `));
     })
     .catch(err => console.error(err));
